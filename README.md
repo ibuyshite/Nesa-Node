@@ -80,9 +80,9 @@ bash <(curl -s https://raw.githubusercontent.com/nesaorg/bootstrap/master/bootst
 
 ![image](https://github.com/user-attachments/assets/69540b5a-1461-41a4-8a20-6efe4d5686f7)
 
-##  Step 6: Useful commands
+##  Some Useful Commands
 
-### Check container logs
+### To Check Container Logs
 ```
 docker logs -f orchestrator
 ```
@@ -95,12 +95,12 @@ Check Containers: You must have 4 new containers now
 docker ps
 ```
 
-### Get node peer-id (wallet public key)
+### Get Node Peer ID
 ```console
 cat $HOME/.nesa/identity/node_id.id
 ```
 
-### Get node status url
+### Get Node Status URL
 ```
 PUB_KEY=$(cat $HOME/.nesa/identity/node_id.id)
 echo https://node.nesa.ai/nodes/$PUB_KEY
