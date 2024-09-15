@@ -107,14 +107,14 @@ echo https://node.nesa.ai/nodes/$PUB_KEY
 ```
 ![image](https://github.com/user-attachments/assets/1c33ea05-6d59-4c7e-a061-76324b2e0134)
 
-## OptionaL: Update or Restart node
+## Optional: Update or Restart node
 * For existing nodes that just need to update their configuration or restart their node
 
 ```
 bash <(curl -s https://raw.githubusercontent.com/nesaorg/bootstrap/master/bootstrap.sh)
 ```
 
-**1. select "Advanced Wizardry"**
+**1. Select "Advanced Wizardry"**
 
 **2. Select Yes to bootstrap it, even if it is currently running.**
 
@@ -122,7 +122,7 @@ bash <(curl -s https://raw.githubusercontent.com/nesaorg/bootstrap/master/bootst
 
 * After this, use `cat ~/.nesa/identity/node_id.id` to check your **node_id** and make sure it is as you think it is. Check the stats at https://node.nesa.ai/
 
-## Tokenomic:
+## Tokenomics:
 The $NES token will be launched on the mainnet network, and 8.8% of it will be airdropped to the incentivized testnet participants.
 
 ![GMpSQF5XAAABwMI](https://github.com/user-attachments/assets/a3bb334d-a55a-41f8-9a04-a333444e04fe)
