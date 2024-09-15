@@ -57,3 +57,72 @@ sudo usermod -aG docker $USER
 4. Click **“Create new token”**, head to **“Write”** tab, and generate an API key by clicking on **“Create token”** .
 
 5. Copy the generated key to use it in your miner installation.
+
+##  Step 4: Open Ports
+```console
+sudo ufw allow ssh
+sudo ufw allow 22
+sudo ufw allow 31333
+sudo ufw enable
+```
+
+## Install and run Nesa Miner
+```
+bash <(curl -s https://raw.githubusercontent.com/nesaorg/bootstrap/master/bootstrap.sh)
+```
+* **Select a mode**: Choose **Wizardy**.
+* **Choose a Moniker**: Provide a unique name for your node.
+* **Node hostname**: skip & press `Enter`.
+* **Node email**: skip & press `Enter`.
+* **Enter Referral Code: to get bonus points**: `nesa1ca0dt3rsdu20003pruj8hsk7qs6fgd0aqfmmtc`
+* **Wallet Private Key**: Enter your wallet private key for miner registration and to receive rewards.
+* Finalize Configuration: Review and confirm the configuration before starting your node. The bootstrap script will provide a summary of your configuration and allow you to make changes before starting the miner.
+
+![image](https://github.com/user-attachments/assets/69540b5a-1461-41a4-8a20-6efe4d5686f7)
+
+##  Step 6: Useful commands
+
+### Check container logs
+```
+docker logs -f orchestrator
+```
+```
+docker logs -f mongodb
+```
+
+Check Containers: You must have 4 new containers now
+```
+docker ps
+```
+
+### Get node peer-id (wallet public key)
+```console
+cat $HOME/.nesa/identity/node_id.id
+```
+
+### Get node status url
+```
+PUB_KEY=$(cat $HOME/.nesa/identity/node_id.id)
+echo https://node.nesa.ai/nodes/$PUB_KEY
+```
+![image](https://github.com/user-attachments/assets/1c33ea05-6d59-4c7e-a061-76324b2e0134)
+
+## OptionaL: Update or Restart node
+* For existing nodes that just need to update their configuration or restart their node
+
+```
+bash <(curl -s https://raw.githubusercontent.com/nesaorg/bootstrap/master/bootstrap.sh)
+```
+
+**1. select "Advanced Wizardry"**
+
+**2. Select Yes to bootstrap it, even if it is currently running.**
+
+* This will update your config and reboot the containers if they are running or start them if they are not.
+
+* After this, use `cat ~/.nesa/identity/node_id.id` to check your **node_id** and make sure it is as you think it is. Check the stats at https://node.nesa.ai/
+
+## Tokenomic:
+The $NES token will be launched on the mainnet network, and 8.8% of it will be airdropped to the incentivized testnet participants.
+
+![GMpSQF5XAAABwMI](https://github.com/user-attachments/assets/a3bb334d-a55a-41f8-9a04-a333444e04fe)
